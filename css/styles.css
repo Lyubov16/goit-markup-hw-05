@@ -42,7 +42,7 @@ h6 {
 
 a {
   text-decoration: none;
-  transition-property: color;
+  transition-property: color, background-color, border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /* ?????????transition-timing-function: var(--timing-function-cubic-bezier); */
@@ -710,15 +710,13 @@ footer {
 
 .project-card {
   display: block;
-  /* text-decoration: none; */
-  transition-property: transform 250ms var(--timing-function-cubic-bezier),
-    border 250ms var(--timing-function-cubic-bezier),
-    box-shadow 250ms var(--timing-function-cubic-bezier);
+  transition: transform 500ms var(--timing-function-cubic-bezier),
+    box-shadow 250ms var(--timing-function-cubic-bezier),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover,
 .project-card:focus {
-  border: 1px solid #eeeeee;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -726,6 +724,7 @@ footer {
 .project-card:hover .cover-text,
 .project-card:focus .cover-text {
   transform: translateY(0%);
+  opacity: 1;
 }
 
 .cover-box {
@@ -746,7 +745,8 @@ footer {
   left: 0;
   height: 100%;
   transform: translateY(101%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* overflow: auto; */
 }
 
